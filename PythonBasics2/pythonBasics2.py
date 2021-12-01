@@ -12,8 +12,23 @@
 
 def count_threes(n):
   # YOUR CODE HERE
+  n = list(str(n))
+  umap ={}
 
-  return
+  umap[3] = umap[6] = umap[9] = 0
+  for i in n:
+      j = int(i)
+      if j%3 == 0 and j!=0:
+        umap[j] = umap[j] + 1
+
+  maximum = -1
+  index = -1
+  for k,v in umap.items():
+    if v > maximum :
+      maximum = v
+      index = k
+
+  return index
 
 
 # Part B. longest_consecutive_repeating_char
