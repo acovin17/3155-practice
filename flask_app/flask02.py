@@ -24,7 +24,8 @@ app.run(host=os.getenv('IP', '127.0.0.1'),port=int(os.getenv('PORT', 5000)),debu
 @app.route('/notes')
 def get_notes():
     notes = {1: {'title': 'First note', 'text': 'This is my first note', 'date': '10-1-2020'},
-             2: {'title': 'Second note', 'text': 'This is my second note', 'date': '10-2-2020'}
+             2: {'title': 'Second note', 'text': 'This is my second note', 'date': '10-2-2020'},
+             3: {'title': 'Third note', 'text': 'This is my third note', 'date': '10-3-2020'}
              }
     return render_template("notes.html" , notes=notes)
 
@@ -32,7 +33,8 @@ def get_notes():
 @app.route('/notes/<note_id>')
 def get_note(note_id):
     notes = {1: {'title': 'First note', 'text': 'This is my first note', 'date': '10-1-2020'},
-             2: {'title': 'Second note', 'text': 'This is my second note', 'date': '10-2-2020'}
+             2: {'title': 'Second note', 'text': 'This is my second note', 'date': '10-2-2020'},
+             3: {'title': 'Third note', 'text': 'This is my third note', 'date': '10-3-2020'}
              }
     return render_template("note.html" , note=notes[int(note_id)])
 # To see the web page in your web browser, go to the url,
